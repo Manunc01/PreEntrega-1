@@ -1,6 +1,7 @@
 body,html{
     font-family: 'Kanit', sans-serif;
     height: 100%;
+    background-color: rgb(27, 27, 27);
 }
 .Title{
     height: 100vh;
@@ -17,4 +18,42 @@ body,html{
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    z-index: 2;
+}
+.Container{
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.562);
+    border-radius: 10%;
+    box-shadow: 16px 14px 20px #000008;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Container:before{
+    content: "";
+    position: absolute;
+    height: 450px;
+    width: 450px;
+    background-image: conic-gradient( red 20deg, rgb(101, 101, 255),transparent 120deg);
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate (0);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+.Container:after{
+    content: "";
+    position: absolute;
+    height: 220px;
+    width: 395px;
+    background-color: #000008;
+    border-radius: 10%;
 }
