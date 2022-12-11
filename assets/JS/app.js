@@ -1,25 +1,49 @@
-function resta (num1,num2){
-    num1=num1-num2
-    console.log ("te quedan $"+num1)}
+//ARRAY DE PRODUCTOS
+const Productos = [
+  { id: 1, producto: "manzana", precio: 50 },
+  { id: 2, producto: "banana", precio: 40 },
+];
 
-let dinero = parseInt (prompt("ingresa tu dinero"))
+//MOSTRAR LA LISTA DE PRODUCTOS
+alert("elija uno o mas de los siguientes productos");
+for (const i of Productos) {
+  alert(i.id + ".- " + i.producto + " $" + i.precio);
+}
+//DECLARACIÓN DE VARIABLES
+let carrito = [];
+let productoSeleccionado;
+let montoTotal = 0
 
-let totalApagar= 500
-
-	alert("procesando compra...")
-	for (let i = 0; i <= 3; i++) {
-	    alert("paso: "+i+"/3");
-	}
-if (dinero >= totalApagar) {
-    alert("compra realizada")
-    resta(dinero,totalApagar)
-} 
-else {
-    let tarjeta = parseInt (prompt("dinero insuficiente, si tienes tarjeta de credito pon 1, si no, pon 2"))
-    if (tarjeta === 1){
-        alert("Compraste con la tarjeta de credito")
+//FUNCION PARA SUMAR PRODUCTOS AL CARRITO
+function elegirProductos(arr) {
+  productoSeleccionado = parseInt(
+    prompt(
+      "escriba el indice de un producto para sumar al carrito, o 0 para salir."
+    )
+  );
+  for (i of arr) {
+    if (i.id === productoSeleccionado) {
+      carrito.push(i.precio);
+      return carrito;
     }
-    else {
-        alert("no se realizó la compra")
+  }
+  return productoSeleccionado;
+}
+//FUNCION PARA SUMAR ELEMENTOS
+function sumarElementos (arr){
+    for (let e of arr) {
+        montoTotal += e;
     }
 }
+//LLAMDA A LA FUNCIÓN
+elegirProductos(Productos);
+
+//BUCLE PARA AGREGAR VARIOS PRODUCTOS
+while (productoSeleccionado !== 0) {
+    elegirProductos(Productos)
+}
+//LLAMADA A LA FUNCIÓN DE SUMAR ELEMENTOS
+sumarElementos(carrito)
+
+//MOSTRAR EL MONTO FINAL
+alert("El Total a pagar es $"+montoTotal)
