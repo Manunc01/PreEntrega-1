@@ -1,18 +1,24 @@
 //ARRAY DE PRODUCTOS
 const Productos = [
-  { id: 1, producto: "manzana", precio: 50 },
-  { id: 2, producto: "banana", precio: 40 },
+  { id: 1, producto: "Remera", precio: 1000 },
+  { id: 2, producto: "Jean", precio: 2000},
+  { id: 3, producto: "Campera", precio: 7800},
+  { id: 4, producto: "Buzo", precio: 5000},
+  { id: 5, producto: "Zapatos", precio: 15000},
 ];
 
 //MOSTRAR LA LISTA DE PRODUCTOS
 alert("elija uno o mas de los siguientes productos");
 for (const i of Productos) {
   alert(i.id + ".- " + i.producto + " $" + i.precio);
+  console.log(i.id+".-" + i.producto + " $"+i.precio)
 }
+
 //DECLARACIÓN DE VARIABLES
 let carrito = [];
 let productoSeleccionado;
 let montoTotal = 0
+let carritoProductos = []
 
 //FUNCION PARA SUMAR PRODUCTOS AL CARRITO
 function elegirProductos(arr) {
@@ -24,7 +30,8 @@ function elegirProductos(arr) {
   for (i of arr) {
     if (i.id === productoSeleccionado) {
       carrito.push(i.precio);
-      return carrito;
+      carritoProductos.push(i.producto)
+      return carrito, carritoProductos;
     }
   }
   return productoSeleccionado;
@@ -46,4 +53,8 @@ while (productoSeleccionado !== 0) {
 sumarElementos(carrito)
 
 //MOSTRAR EL MONTO FINAL
-alert("El Total a pagar es $"+montoTotal)
+alert(`Los productos seleccionados son:
+${carritoProductos}.
+
+El total es de: $${montoTotal}`)
+
