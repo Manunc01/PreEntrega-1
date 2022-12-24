@@ -88,6 +88,8 @@ function mostrarPrecios() {
   }
 }
 //--------------------------------DOM y EVENTS
+
+//BOTONES PARA AGREGAR Y ELIMINAR PRODUCTOS
 agregar1.onclick = () => {
   elegirProducto(1, Productos);
   montoFinal = carrito.reduce((a, b) => a + b, 0);
@@ -163,12 +165,14 @@ eliminar5.onclick = () => {
   mostrarProductos();
   mostrarPrecios();
 };
+// BOTON PARA GUARDAR EN LOCALSTORAGE
 guardar.onclick = () => {
   const enJSON = JSON.stringify(carrito);
   localStorage.setItem("carrito", enJSON);
   const enJSON2 = JSON.stringify(carritoProductos);
   localStorage.setItem("productosCarrito", enJSON2);
 };
+//BOTON PARA VACIAR EL CARRITO
 vaciar.onclick = () =>{
   carrito = []
   carritoProductos = []

@@ -44,9 +44,13 @@ body,html{
     animation: rotate 1.5s linear infinite;
 }
 .carrito {
+  padding: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  background-color: aliceblue;
     margin-left: auto;
     margin-right: auto;
-    height: 60vh;
+    height: fit-content;
     width: 75vw;
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -58,16 +62,23 @@ body,html{
       "textoTotal total"
       "guardar guardar";
   }
+  li{
+    padding: 2.5px;
+  }
   #productos { grid-area: Productos; 
 list-style:none;
 padding-left: 0;}
   #precios { grid-area: Precios; 
 text-align: right;
-list-style: none;}
+list-style: none;
+padding-left: 0;}
   #textoTotal { grid-area: textoTotal; }
   #montoTotal { grid-area: total; 
 text-align: right;}
-  .botonesCarrito { grid-area: guardar;
+  .botonesCarrito { 
+    padding: 10px;
+    background-color: rgb(27, 27, 27);
+    grid-area: guardar;
 display: flex;
 justify-content: space-around;}
   .contenedorBotones{
