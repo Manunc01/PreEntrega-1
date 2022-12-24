@@ -21,6 +21,7 @@ body,html{
     z-index: 2;
 }
 .Container{
+    aspect-ratio: 16 / 9;
     padding: 3%;
     background-color: rgba(0, 0, 0, 0.562);
     border-radius: 10%;
@@ -31,15 +32,61 @@ body,html{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap;
 }
 .Container:before{
+    aspect-ratio: 16 / 9;
     content: "";
     position: absolute;
-    height: 450px;
-    width: 450px;
+    height: 70vh;
+    width: 90vw;
     background-image: conic-gradient( red 20deg, rgb(101, 101, 255),transparent 120deg);
     animation: rotate 1.5s linear infinite;
 }
+.carrito {
+    margin-left: auto;
+    margin-right: auto;
+    height: 60vh;
+    width: 75vw;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1.6fr 0.2fr 0.2fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Productos Precios"
+      "Productos Precios"
+      "textoTotal total"
+      "guardar guardar";
+  }
+  #productos { grid-area: Productos; 
+list-style:none;
+padding-left: 0;}
+  #precios { grid-area: Precios; 
+text-align: right;
+list-style: none;}
+  #textoTotal { grid-area: textoTotal; }
+  #montoTotal { grid-area: total; 
+text-align: right;}
+  .botonesCarrito { grid-area: guardar;
+display: flex;
+justify-content: space-around;}
+  .contenedorBotones{
+    display: flex;
+  }
+  .contenedorProductos{
+    margin-right: auto;
+    margin-left: auto;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 10px;
+    padding: 10px;
+    justify-content: space-around;
+  }
+  .cartaProducto{
+    padding: 10px;
+    text-align: center;
+  }
 
 @keyframes rotate{
     from{
@@ -52,8 +99,9 @@ body,html{
 .Container:after{
     content: "";
     position: absolute;
-    height: 220px;
-    width: 395px;
+    height: 40vh;
+    width: 30vw;
     background-color: #000008;
     border-radius: 10%;
+    aspect-ratio: 16 / 9;
 }

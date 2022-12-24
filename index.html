@@ -10,17 +10,70 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/CSS/normalize.css" />
     <link rel="stylesheet" href="./assets/CSS/style.css" />
     <title>Document</title>
   </head>
 
   <body>
-<div class="Title">
-  <div class="Container">
-    <h1 class="GradiantText">Manuel Noceti Campos</h1>
-    <h2 class="GradiantText">Javascript Coderhouse</h2>
-  </div>
-</div>
+    <div class="Title">
+      <div class="Container">
+        <h1 class="GradiantText">Manuel Noceti Campos</h1>
+        <h2 class="GradiantText">Javascript Coderhouse</h2>
+        <h4 class="GradiantText">(Carrito abajo!!)</h4>
+      </div>
+    </div>
+    <div class="contenedorProductos">
+      <div class="cartaProducto">
+        <p>Remera</p>
+        <div class="contenedorBotones">
+          <button id="agregar1">Agregar</button>
+          <button id="eliminar1">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="cartaProducto">
+        <p>Jean</p>
+        <div class="contenedorBotones">
+          <button id="agregar2">Agregar</button>
+          <button id="eliminar2">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="cartaProducto">
+        <p>Campera</p>
+        <div class="contenedorBotones">
+          <button id="agregar3">Agregar</button>
+          <button id="eliminar3">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="cartaProducto">
+        <p>Buzo</p>
+        <div class="contenedorBotones">
+          <button id="agregar4">Agregar</button>
+          <button id="eliminar4">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="cartaProducto">
+        <p>Zapatos</p>
+        <div class="contenedorBotones">
+          <button id="agregar5">Agregar</button>
+          <button id="eliminar5">Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div class="carrito">
+      <ul id="productos"></ul>
+      <ul id="precios"></ul>
+      <p id="textoTotal">Total:</p>
+      <p id="montoTotal"></p>
+      <div class="botonesCarrito">
+        <button id="guardar">Guardar productos</button>
+        <button id="vaciar">Vaciar carrito</button>
+      </div>
+    </div>
 
     <!--------------------SCRIPTS!!!!!!--------------->
     <script src="./assets/JS/app.js"></script>
