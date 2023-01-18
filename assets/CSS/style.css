@@ -57,20 +57,18 @@ body,html{
     grid-template-rows: 1fr 1.6fr 0.2fr 0.2fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "Productos Precios"
-      "Productos Precios"
+      "Productos Productos"
+      "Productos Productos"
       "textoTotal total"
       "guardar guardar";
   }
   li{
+    display: flex;
+    justify-content: space-between;
     padding: 2.5px;
   }
   #productos { grid-area: Productos; 
 list-style:none;
-padding-left: 0;}
-  #precios { grid-area: Precios; 
-text-align: right;
-list-style: none;
 padding-left: 0;}
   #textoTotal { grid-area: textoTotal; }
   #montoTotal { grid-area: total; 
@@ -95,8 +93,18 @@ justify-content: space-around;}
     justify-content: space-around;
   }
   .cartaProducto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 30vw;
     padding: 10px;
     text-align: center;
+  }
+  .cartaProducto img{
+    height: 130px;
+    width: 90px;
+    margin: 5px;
   }
 
 @keyframes rotate{
